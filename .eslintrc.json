@@ -1,3 +1,12 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals","./node_modules/ts-standard/eslintrc.json"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/promise-function-async": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "react-refresh/only-export-components": "off"
+  }
 }
