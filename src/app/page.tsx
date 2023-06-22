@@ -28,6 +28,7 @@ export default async function Home () {
           <li className='bg-gray-900 p-4 rounded' key={challenge.title}>
             <img src={challenge.heroImage} alt={challenge.title} />
             <h3 className='text-lg font-medium'>{challenge.title}</h3>
+            <p className='line-clamp-3'>{challenge.description}</p>
           </li>
         ))}
       </ul>
