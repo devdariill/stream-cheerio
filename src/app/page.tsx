@@ -22,7 +22,7 @@ export default async function Home () {
   return (
     <main>
       <h1 className='text-xl font-bold mb4'>Frontendmentos Challenges</h1>
-      <ul>
+      <ul className='grid gap-4 grid-cols-[repeat(auto-fill,minmax(200px,1fr))]'>
         {challenges.map(challenge => (
           <li key={challenge.title}>
             <h2>{challenge.title}</h2>
