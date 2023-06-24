@@ -23,6 +23,7 @@ function HomePageClient ({ challenges: initialState }: Props) {
   const [liked, setLiked] = useState<Chanllenges[]>([])
   const handleLike = () => {
     setLiked((_liked) => _liked.concat(challenge))
+    handleDislike()
   }
 
   const handleReset = () => {
