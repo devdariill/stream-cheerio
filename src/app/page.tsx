@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import { load } from 'cheerio'
+import HomePageClient from './client'
 
 async function getChallenges () {
   interface NextData {
@@ -23,15 +23,16 @@ export default async function Home () {
   return (
     <main>
       <h1 className='text-xl font-bold mb4'>Frontendmentos Challenges</h1>
-      <ul className='grid gap-4 grid-cols-[repeat(auto-fill,minmax(200px,1fr))]'>
+      {/* <ul className='grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]'>
         {challenges.map(challenge => (
           <li className='bg-gray-900 p-4 rounded' key={challenge.title}>
             <img src={challenge.heroImage} alt={challenge.title} />
-            <h3 className='text-lg font-medium'>{challenge.title}</h3>
-            <p className='line-clamp-3'>{challenge.description}</p>
+            <h3 className='text-xl font-medium my-3'>{challenge.title}</h3>
+            <p className='line-clamp-3 text-white/80'>{challenge.description}</p>
           </li>
         ))}
-      </ul>
+      </ul> */}
+      <HomePageClient challenges={challenges} />
     </main>
   )
 }
