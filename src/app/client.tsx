@@ -38,6 +38,24 @@ function HomePageClient ({ challenges: initialState }: Props) {
     setSetshowLiked(false)
   }
 
+  if (setshowLiked) {
+    return (
+      <div className='flex flex-col gap-4'>
+        <ul className='flex flex-col gap-4'>
+          {liked.map((_challenge) => (
+            <li key={challenge.title}>
+              <article className='flex items-center justify-between gap-2'>
+                <h3>{challenge.title}</h3>
+                <a target='_blanck' rel='noopener noreferer' href={`https://frontendmentos.io/challenge/${_challenge.title}`}>Ver Challenge</a>
+              </article>
+            </li>
+          ))}
+        </ul>
+        <button type='button' className='m-auto' onClick={handleHideLiked}>Volver atras</button>
+      </div>
+    )
+  }
+
   return (
     <div>
       <article className='bg-gray-900 p-4 rounded ' key={challenge.title}>
