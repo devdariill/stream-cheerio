@@ -1,6 +1,8 @@
 import { load } from 'cheerio'
 import HomePageClient from './client'
 
+// export const dynamic = 'force-dynamic'
+
 async function getChallenges () {
   interface NextData {
     props: {
@@ -13,6 +15,7 @@ async function getChallenges () {
   }
 
   const html = await fetch('https://www.frontendmentor.io/challenges').then(res => res.text())
+  // const html = await fetch('https://www.frontendmentor.io/challenges', { next: { revalidate: 100 } }).then(res => res.text())
   const $ = load(html)
   const nextData = JSON.parse($('#__NEXT_DATA__').html() as string) as NextData
   return Object.values(nextData.props.initialState['v2/challenges'].entities)
